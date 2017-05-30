@@ -1,0 +1,26 @@
+
+Cloud9 GCP containter
+- install GCP https://cloud.google.com/sdk/docs/
+- install nvm.  put node at 6.9.1
+- install local testing: https://github.com/GoogleCloudPlatform/cloud-functions-emulator
+- you'll need to enable auth for local environments (cloud9) but not for production (google gets it automatically)
+- for Cloud9, change bindHost to 0.0.0.0, supervisorPort to 8080
+
+
+
+SELECT logrecno, sumlevel FROM `censusbigquery.acs0913.g20135*` where sumlevel='040';
+
+cd ~/gcf_http
+
+touch index.js
+
+gcloud beta functions deploy helloGET --stage-bucket census-functions --trigger-http
+
+
+Emulator
+--------
+functions start
+functions deploy helloWorld --trigger-http
+functions call helloGET
+functions logs read
+functions stop
