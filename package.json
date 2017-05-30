@@ -1,0 +1,26 @@
+{
+  "name": "bigqueryserverless",
+  "version": "0.0.1",
+  "description": "google bigquery via google cloud functions",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/royhobbstn/bigQueryServerless.git"
+  },
+  "keywords": [
+    "bigquery",
+    "serverless"
+  ],
+  "author": "Daniel Trone",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/royhobbstn/bigQueryServerless/issues"
+  },
+  "homepage": "https://github.com/royhobbstn/bigQueryServerless#readme",
+  "dependencies": {
+    "@google-cloud/bigquery": "^0.9.4"
+  }
+}
