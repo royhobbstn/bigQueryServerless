@@ -8,19 +8,17 @@ Cloud9 GCP containter
 
 
 
-SELECT logrecno, sumlevel FROM `censusbigquery.acs0913.g20135*` where sumlevel='040';
-
-cd ~/gcf_http
-
-touch index.js
-
-gcloud beta functions deploy helloGET --stage-bucket census-functions --trigger-http
-
-
 Emulator
 --------
 functions start
-functions deploy helloWorld --trigger-http
-functions call helloGET
+functions deploy bigQueryTest --trigger-http
+functions call bigQueryTest
 functions logs read
 functions stop
+https://gcp-royhobbstn.c9users.io/censusbigquery/us-central1/bigQueryTest
+
+
+Production
+-----------
+gcloud beta functions deploy bigQueryTest --stage-bucket census-functions --trigger-http
+https://us-central1-censusbigquery.cloudfunctions.net/bigQueryTest

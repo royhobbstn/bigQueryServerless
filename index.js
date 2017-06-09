@@ -13,7 +13,7 @@ exports.bigQueryTest = function bigQueryTest(req, res) {
   // curl -X POST https://gcp-royhobbstn.c9users.io/censusbigquery/us-central1/bigQueryTest -H "Content-Type:application/json" --data '{"field":"logrecno"}'
 
 
-  const sqlQuery = "SELECT " + req.body.field  + ", sumlevel FROM `censusbigquery.acs0913.g20135*` where sumlevel='040';";
+  const sqlQuery = `select NAME, B19013_001 from acs1115.eseq059 where STATE = '${req.query.state}' and SUMLEVEL = '050' order by NAME asc;`;
 
 
   // Instantiates a client
